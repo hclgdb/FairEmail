@@ -162,6 +162,7 @@ public class AdapterNavUnified extends RecyclerView.Adapter<AdapterNavUnified.Vi
             if (folder.type == null) {
                 Intent view = new Intent(context, ActivityView.class);
                 view.setAction("unified");
+                view.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 context.startActivity(view);
             } else if (folder.folders > 1)
                 lbm.sendBroadcast(
